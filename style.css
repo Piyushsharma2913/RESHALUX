@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #F8F6F3;
+  color: #1C1C1C;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  padding: 14px;
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+/* LEFT TOP LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #5A1E2D;
+}
+
+.logo img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* Tabs right side */
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+.tabs {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tab {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #C9A24D;
+  color: #fff;
+}
+
+/* CATEGORIES */
+.categories {
+  display: flex;
+  gap: 14px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.categories span {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.categories .active {
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* CARD AREA */
+main {
+  height: calc(100vh - 260px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card-container {
+  width: 90%;
+  max-width: 360px;
+  height: 480px;
+  position: relative;
+}
+
+/* CARD */
+.card {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 22px;
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 14px;
+}
+
+.card-info h3 {
+  font-size: 18px;
+}
+
+.card-info p {
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.actions button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.skip {
+  background: #eee;
+}
+
+.like {
+  background: #ff5a5f;
+  color: #fff;
+}
+
+/* LIST BUTTON */
+.list-btn {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #25D366;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* FLOATING ABOUT ICON */
+.about-float {
+  position: fixed;
+  right: 16px;
+  bottom: 90px;
+  width: 48px;
+  height: 49px;
+  background: #5A1E2D;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 998;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(90,30,45,0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(90,30,45,0); }
+  100% { box-shadow: 0 0 0 0 rgba(90,30,45,0); }
+}
+
+/* ABOUT MODAL */
+.about-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.about-box {
+  background: #fff;
+  width: 90%;
+  max-width: 340px;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-logo {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+/* ===== LUXURY ABOUT POPUP UPGRADE ===== */
+
+/* Glass blur background */
+.about-modal {
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+}
+
+/* Premium popup animation */
+.about-box {
+  position: relative;
+  padding: 28px 22px;
+  border-radius: 24px;
+  animation: luxurySlide 0.45s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+/* Slide + fade animation */
+@keyframes luxurySlide {
+  from {
+    transform: translateY(50px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Brand heading */
+.about-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  color: #5A1E2D;
+  margin-bottom: 10px;
+}
+
+/* Clean luxury text */
+.about-box p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+/* Trust points – Myntra style */
+.trust-points li {
+  font-size: 13px;
+  color: #333;
+  margin: 6px 0;
+}
+
+/* CTA button – luxury */
+.about-box button {
+  background: linear-gradient(135deg, #5A1E2D, #8B3A4A);
+  border-radius: 30px;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  transition: transform 0.2s ease;
+}
+
+.about-box button:hover {
+  transform: scale(1.03);
+}
+
+/* Close icon subtle */
+.close-btn {
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Floating info icon – premium pulse */
+.about-float {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}

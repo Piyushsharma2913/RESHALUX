@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Reshalux</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="resha.png" alt="reshalux logo">
+    <span>RESHALUX</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchMode('rent')">Rent</button>
+    <button class="tab" onclick="switchMode('buy')">Buy</button>
+  </div>
+</header>
+
+<div class="categories">
+  <span class="active" onclick="setCategory('all')">All</span>
+  <span onclick="setCategory('saree')">Saree</span>
+  <span onclick="setCategory('lehenga')">Lehenga</span>
+  <span onclick="setCategory('kurti')">Kurti</span>
+  <span onclick="setCategory('gown')">Gown</span>
+</div>
+
+<main>
+  <div id="card-container"></div>
+</main>
+
+<!-- Action Buttons -->
+<div class="actions">
+  <button class="skip"><i class="fa-solid fa-xmark"></i></button>
+  <button class="like"><i class="fa-solid fa-heart"></i></button>
+</div>
+
+<a class="list-btn" href="https://wa.me/918107249155?text=I%20want%20to%20list%20my%20dress" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i> List Your Dress
+</a>
+
+<!-- FLOATING ABOUT ICON -->
+<div class="about-float" onclick="openAbout()">
+  <i class="fa-solid fa-circle-info"></i>
+</div>
+
+<!-- ABOUT MODAL -->
+<div id="aboutModal" class="about-modal">
+  <div class="about-box">
+    <span class="close-btn" onclick="closeAbout()">×</span>
+
+    <img src="resha.png" class="about-logo">
+
+    <h2>About Reshalux</h2>
+    <p>
+      Reshalux is a trusted fashion rental & resale platform.
+      Rent or buy premium outfits directly from verified sellers.
+    </p>
+
+    <ul class="trust-points">
+      <li>✔ Verified Sellers</li>
+      <li>✔ Quality Checked Dresses</li>
+      <li>✔ Secure WhatsApp Orders</li>
+      <li>✔ Transparent Pricing</li>
+    </ul>
+
+    <button onclick="closeAbout()">Explore Dresses</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
