@@ -38,11 +38,26 @@ function loadCard() {
   card.className = "card";
 
   card.innerHTML = `
-    <img src="${item.img}">
-    <div class="card-info">
-      <h3>${item.name}</h3>
-      <p>${item.price}</p>
-    </div>
+    card.innerHTML = `
+  <img src="${item.img}">
+
+  <div class="card-actions">
+    <button class="skip"><i class="fa-solid fa-xmark"></i></button>
+    <button class="like"><i class="fa-solid fa-heart"></i></button>
+  </div>
+
+  <div class="card-info">
+    <h3>${item.name}</h3>
+    <p>${item.price}</p>
+  </div>
+    const likeBtn = card.querySelector(".like");
+const skipBtn = card.querySelector(".skip");
+
+likeBtn.onclick = () => likeItem(item);
+skipBtn.onclick = skipItem;
+
+`;
+
   `;
 
   enableSwipe(card, item);
@@ -150,4 +165,5 @@ setTimeout(() => {
 function closeListPopup() {
   document.getElementById("listPopup").style.display = "none";
 }
+
 
