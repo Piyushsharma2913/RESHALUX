@@ -36,19 +36,15 @@ const data = {
   ]
 };
 
-/* ---------- HELPERS ---------- */
-function getItems() {
+function getItems(){
   return data[mode].filter(i => category === "all" || i.cat === category);
 }
 
-/* ---------- LOAD CARD ---------- */
-function loadCard() {
+function loadCard(){
   container.innerHTML = "";
   const items = getItems();
-
-  if (!items.length) {
-    container.innerHTML =
-      `<p style="text-align:center;color:#888;margin-top:40px">No more dresses</p>`;
+  if(!items.length){
+    container.innerHTML = "<p style='text-align:center;color:#888'>No more dresses</p>";
     return;
   }
 
@@ -62,7 +58,6 @@ function loadCard() {
       <h3>${item.name}</h3>
       <p>${item.price}</p>
     </div>
-
     <div class="card-actions">
       <button class="skip"><i class="fa-solid fa-xmark"></i></button>
       <button class="like"><i class="fa-solid fa-heart"></i></button>
@@ -70,104 +65,81 @@ function loadCard() {
   `;
 
   container.appendChild(card);
-
   enableSwipe(card, item);
 
   card.querySelector(".like").onclick = () => likeItem(item);
   card.querySelector(".skip").onclick = () => skipItem(item);
 }
 
-/* ---------- SWIPE ENGINE (iOS SAFE) ---------- */
-function enableSwipe(card, item) {
+function enableSwipe(card, item){
   let startX = 0;
   let moveX = 0;
 
-  card.addEventListener("touchstart", e => {
+  card.addEventListener("touchstart", e=>{
     startX = e.touches[0].clientX;
-    card.style.transition = "none";
-  }, { passive: true });
+    card.style.transition="none";
+  });
 
-  card.addEventListener("touchmove", e => {
+  card.addEventListener("touchmove", e=>{
     moveX = e.touches[0].clientX - startX;
-    card.style.transform =
-      `translateX(${moveX}px) rotate(${moveX / 15}deg)`;
-  }, { passive: true });
+    card.style.transform = `translateX(${moveX}px) rotate(${moveX/15}deg)`;
+  });
 
-  card.addEventListener("touchend", () => {
-    card.style.transition = "transform 0.3s ease";
-
-    if (moveX > 120) likeItem(item);
-    else if (moveX < -120) skipItem(item);
-    else card.style.transform = "translateX(0)";
+  card.addEventListener("touchend", ()=>{
+    card.style.transition="0.3s";
+    if(moveX > 120) likeItem(item);
+    else if(moveX < -120) skipItem(item);
+    else card.style.transform="translateX(0)";
   });
 }
 
-/* ---------- ACTIONS ---------- */
-function likeItem(item) {
+function likeItem(item){
   animateOut(1);
-  setTimeout(() => {
+  setTimeout(()=>{
     removeItem(item);
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=I%20want%20to%20${mode}%20${item.name}`,
-      "_blank"
-    );
+    window.open(`https://wa.me/${whatsappNumber}?text=I%20want%20to%20${mode}%20${item.name}`,"_blank");
     loadCard();
-  }, 300);
+  },300);
 }
 
-function skipItem(item) {
+function skipItem(item){
   animateOut(-1);
-  setTimeout(() => {
+  setTimeout(()=>{
     removeItem(item);
     loadCard();
-  }, 300);
+  },300);
 }
 
-function animateOut(dir) {
+function animateOut(dir){
   const card = container.firstChild;
-  if (!card) return;
-  card.style.transform = `translateX(${dir * 120}vw) rotate(${dir * 15}deg)`;
+  if(card) card.style.transform = `translateX(${dir*120}vw) rotate(${dir*15}deg)`;
 }
 
-function removeItem(item) {
-  const index = data[mode].indexOf(item);
-  if (index > -1) data[mode].splice(index, 1);
+function removeItem(item){
+  const i = data[mode].indexOf(item);
+  if(i>-1) data[mode].splice(i,1);
 }
 
-/* ---------- MODE & CATEGORY ---------- */
-function switchMode(m, btn) {
-  mode = m;
-  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+function switchMode(m, btn){
+  mode=m;
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
   btn.classList.add("active");
   loadCard();
 }
 
-function setCategory(cat, el) {
-  category = cat;
-  document.querySelectorAll(".categories span")
-    .forEach(s => s.classList.remove("active"));
+function setCategory(cat, el){
+  category=cat;
+  document.querySelectorAll(".categories span").forEach(s=>s.classList.remove("active"));
   el.classList.add("active");
   loadCard();
 }
 
-/* ---------- ABOUT POPUP ---------- */
-function openAbout() {
-  document.getElementById("aboutModal").style.display = "flex";
+function openAbout(){
+  document.getElementById("aboutModal").style.display="flex";
 }
 
-function closeAbout() {
-  document.getElementById("aboutModal").style.display = "none";
+function closeAbout(){
+  document.getElementById("aboutModal").style.display="none";
 }
 
-/* ---------- LIST POPUP ---------- */
-setTimeout(() => {
-  const p = document.getElementById("listPopup");
-  if (p) p.style.display = "flex";
-}, 2000);
-
-function closeListPopup() {
-  document.getElementById("listPopup").style.display = "none";
-}
-
-/* INIT */
 loadCard();
