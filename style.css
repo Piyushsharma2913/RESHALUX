@@ -372,5 +372,63 @@ main {
   text-decoration: none;
   font-size: 14px;
 }
+/* WOMEN TRUST SECTION */
+.safety-strip {
+  background: #5A1E2D;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 8px;
+}
+
+.women-love {
+  padding: 32px 16px;
+  background: linear-gradient(180deg, #fff7f4, #fff);
+}
+
+.women-love h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #5A1E2D;
+}
+
+.women-cards {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.woman-card {
+  min-width: 260px;
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  scroll-snap-align: center;
+}
+
+.woman-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.woman-card span {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #777;
+}
+
+.woman-card .stars {
+  color: #f4b400;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+
 
 
