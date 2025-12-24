@@ -1,118 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Reshalux</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Reshalux</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
   <div class="logo">
-    <img src="resha.png" alt="reshalux logo">
+    <img src="resha.png" alt="Reshalux">
     <span>RESHALUX</span>
   </div>
 
   <div class="tabs">
-    <button class="tab active" onclick="switchMode('rent')">Rent</button>
-    <button class="tab" onclick="switchMode('buy')">Buy</button>
+    <button class="tab active">Rent</button>
+    <button class="tab">Buy</button>
   </div>
 </header>
 
 <div class="categories">
-  <span class="active" onclick="setCategory('all')">All</span>
-  <span onclick="setCategory('saree')">Saree</span>
-  <span onclick="setCategory('lehenga')">Lehenga</span>
-  <span onclick="setCategory('kurti')">Kurti</span>
-  <span onclick="setCategory('gown')">Gown</span>
+  <span class="active">All</span>
+  <span>Saree</span>
+  <span>Lehenga</span>
+  <span>Kurti</span>
+  <span>Gown</span>
 </div>
 
 <main>
-  <div id="card-container"></div>
+  <div id="card-container">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520962917960-7f4b8b6c0c38" />
+      <div class="card-info">
+        <h3>Royal Lehenga</h3>
+        <p>₹2,500 / Rent</p>
+      </div>
+    </div>
+  </div>
 </main>
 
-<!-- WOMEN TRUST STRIP -->
+<div class="card-actions">
+  <button class="skip"><i class="fa-solid fa-xmark"></i></button>
+  <button class="like"><i class="fa-solid fa-heart"></i></button>
+</div>
+
 <div class="safety-strip">
   💖 Safe for women • Earn from home • Verified handling
 </div>
 
-<!-- REVIEWS -->
 <section class="women-love">
   <h2>Loved by Women Like You 💕</h2>
-
   <div class="women-cards">
     <div class="woman-card">
-      <p>“I earned money from my old lehenga sitting at home.”</p>
+      <p>“Earned money from my lehenga at home.”</p>
       <span>— Sunita, Jaipur</span>
       <div class="stars">★★★★★</div>
     </div>
-
     <div class="woman-card">
-      <p>“Everything happened safely on WhatsApp.”</p>
+      <p>“Felt safe listing my dress.”</p>
       <span>— Aarti, Delhi</span>
       <div class="stars">★★★★★</div>
     </div>
   </div>
 </section>
 
-<!-- FLOATING LIST BUTTON (VERY IMPORTANT) -->
-<div class="list-float" onclick="openListPopup()">
-  <i class="fa-brands fa-whatsapp"></i>
-</div>
-
-<!-- LIST POPUP -->
-<div id="listPopup" class="list-popup">
-  <div class="popup-box">
-    <span class="close-btn" onclick="closeListPopup()">×</span>
-
-    <h3>Earn from your dresses 👗</h3>
-    <p>
-      List your old or premium outfits safely.  
-      You earn 100% rent amount.
-    </p>
-
-    <a href="https://wa.me/918107249155?text=I%20want%20to%20list%20my%20dress"
-       target="_blank"
-       class="popup-btn">
-      List on WhatsApp
-    </a>
-  </div>
-</div>
-
-<!-- ABOUT FLOAT -->
-<div class="about-float" onclick="openAbout()">
+<!-- FLOATING ABOUT BUTTON -->
+<button class="about-float" id="aboutBtn">
   <i class="fa-solid fa-circle-info"></i>
-</div>
+</button>
 
 <!-- ABOUT MODAL -->
 <div id="aboutModal" class="about-modal">
   <div class="about-box">
-    <span class="close-btn" onclick="closeAbout()">×</span>
-
+    <span class="close-btn" id="closeAbout">×</span>
     <img src="resha.png" class="about-logo">
     <h2>About Reshalux</h2>
-
     <p>
-      Reshalux is a trusted fashion rental & resale platform
-      made especially for women.
+      Trusted fashion rental & resale platform.
+      Verified sellers. Premium handling.
     </p>
-
     <ul class="trust-points">
       <li>✔ Verified Sellers</li>
-      <li>✔ WhatsApp-only communication</li>
-      <li>✔ Respectful handling</li>
+      <li>✔ Quality Checked</li>
+      <li>✔ WhatsApp Orders</li>
     </ul>
-
-    <button onclick="closeAbout()">Explore Dresses</button>
+    <button id="closeBtn2">Explore Dresses</button>
   </div>
 </div>
 
