@@ -302,3 +302,36 @@ main {
 .about-float {
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
+
+.list-side {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #5A1E2D, #8B3A4A);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 14px 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* Mobile safe */
+@media (max-width: 480px) {
+  .list-side {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+}
+
+.list-side i {
+  font-size: 16px;
+}
+
+
