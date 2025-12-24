@@ -143,3 +143,11 @@ function closeAbout() {
 }
 
 loadCard();
+setTimeout(() => {
+  document.getElementById("listPopup").style.display = "flex";
+}, 2000);
+
+function closeListPopup() {
+  document.getElementById("listPopup").style.display = "none";
+}
+
