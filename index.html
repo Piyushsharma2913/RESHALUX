@@ -39,47 +39,56 @@
 <main>
   <div id="card-container"></div>
 </main>
-<!-- WOMEN TRUST SECTION -->
+
+<!-- WOMEN TRUST STRIP -->
 <div class="safety-strip">
   💖 Safe for women • Earn from home • Verified handling
 </div>
 
+<!-- REVIEWS -->
 <section class="women-love">
   <h2>Loved by Women Like You 💕</h2>
 
   <div class="women-cards">
-
     <div class="woman-card">
-      <p>
-        “I earned money from my old lehenga sitting at home.
-        Reshalux is a blessing.”
-      </p>
+      <p>“I earned money from my old lehenga sitting at home.”</p>
       <span>— Sunita, Jaipur</span>
       <div class="stars">★★★★★</div>
     </div>
 
     <div class="woman-card">
-      <p>
-        “I felt safe listing my dress.
-        Everything happened on WhatsApp.”
-      </p>
+      <p>“Everything happened safely on WhatsApp.”</p>
       <span>— Aarti, Delhi</span>
       <div class="stars">★★★★★</div>
     </div>
-
-    <div class="woman-card">
-      <p>
-        “My saree was treated with respect.
-        Very professional team.”
-      </p>
-      <span>— Kavita, Ahmedabad</span>
-      <div class="stars">★★★★☆</div>
-    </div>
-
   </div>
 </section>
 
-<!-- FLOATING ABOUT ICON -->
+<!-- FLOATING LIST BUTTON (VERY IMPORTANT) -->
+<div class="list-float" onclick="openListPopup()">
+  <i class="fa-brands fa-whatsapp"></i>
+</div>
+
+<!-- LIST POPUP -->
+<div id="listPopup" class="list-popup">
+  <div class="popup-box">
+    <span class="close-btn" onclick="closeListPopup()">×</span>
+
+    <h3>Earn from your dresses 👗</h3>
+    <p>
+      List your old or premium outfits safely.  
+      You earn 100% rent amount.
+    </p>
+
+    <a href="https://wa.me/918107249155?text=I%20want%20to%20list%20my%20dress"
+       target="_blank"
+       class="popup-btn">
+      List on WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ABOUT FLOAT -->
 <div class="about-float" onclick="openAbout()">
   <i class="fa-solid fa-circle-info"></i>
 </div>
@@ -90,18 +99,17 @@
     <span class="close-btn" onclick="closeAbout()">×</span>
 
     <img src="resha.png" class="about-logo">
-
     <h2>About Reshalux</h2>
+
     <p>
-      Reshalux is a trusted fashion rental & resale platform.
-      Rent or buy premium outfits directly from verified sellers.
+      Reshalux is a trusted fashion rental & resale platform
+      made especially for women.
     </p>
 
     <ul class="trust-points">
       <li>✔ Verified Sellers</li>
-      <li>✔ Quality Checked Dresses</li>
-      <li>✔ Secure WhatsApp Orders</li>
-      <li>✔ Transparent Pricing</li>
+      <li>✔ WhatsApp-only communication</li>
+      <li>✔ Respectful handling</li>
     </ul>
 
     <button onclick="closeAbout()">Explore Dresses</button>
@@ -109,30 +117,5 @@
 </div>
 
 <script src="script.js"></script>
-
 </body>
-<div id="listPopup" class="list-popup">
-  <div class="popup-box">
-    <span onclick="closeListPopup()">×</span>
-    <h3>Earn from your dresses</h3>
-    <p>
-      List your old or premium outfits on Reshalux.
-      You earn full rent amount.
-    </p>
-    <a href="https://wa.me/918107249155?text=I%20want%20to%20list%20my%20dress"
-       target="_blank"
-       class="popup-btn">
-      List on WhatsApp
-    </a>
-  </div>
-</div>
-
-
-
 </html>
-
-
-
-
-
-
