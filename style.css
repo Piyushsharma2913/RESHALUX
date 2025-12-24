@@ -11,15 +11,14 @@ body {
   overflow-x: hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
   padding: 14px;
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
-/* LEFT TOP LOGO */
+
 .logo {
   display: flex;
   align-items: center;
@@ -32,18 +31,11 @@ header {
 .logo img {
   width: 34px;
   height: 34px;
-  object-fit: contain;
 }
 
-/* Tabs right side */
+/* ================= TABS ================= */
 .tabs {
   display: flex;
-  gap: 8px;
-}
-.tabs {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
   gap: 10px;
 }
 
@@ -60,7 +52,7 @@ header {
   color: #fff;
 }
 
-/* CATEGORIES */
+/* ================= CATEGORIES ================= */
 .categories {
   display: flex;
   gap: 14px;
@@ -78,7 +70,7 @@ header {
   font-weight: bold;
 }
 
-/* CARD AREA */
+/* ================= CARD AREA ================= */
 main {
   height: calc(100vh - 260px);
   display: flex;
@@ -93,7 +85,6 @@ main {
   position: relative;
 }
 
-/* CARD */
 .card {
   width: 100%;
   height: 100%;
@@ -123,7 +114,7 @@ main {
   font-weight: bold;
 }
 
-/* ACTION BUTTONS */
+/* ================= ACTION BUTTONS ================= */
 .actions {
   display: flex;
   justify-content: center;
@@ -149,7 +140,7 @@ main {
   color: #fff;
 }
 
-/* LIST BUTTON */
+/* ================= LIST BUTTON ================= */
 .list-btn {
   position: fixed;
   bottom: 15px;
@@ -162,13 +153,14 @@ main {
   text-decoration: none;
   font-weight: bold;
 }
-/* FLOATING ABOUT ICON */
+
+/* ================= FLOATING ABOUT ================= */
 .about-float {
   position: fixed;
   right: 16px;
   bottom: 90px;
   width: 48px;
-  height: 49px;
+  height: 48px;
   background: #5A1E2D;
   color: #fff;
   border-radius: 50%;
@@ -179,6 +171,7 @@ main {
   cursor: pointer;
   z-index: 998;
   animation: pulse 1.5s infinite;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 @keyframes pulse {
@@ -187,14 +180,12 @@ main {
   100% { box-shadow: 0 0 0 0 rgba(90,30,45,0); }
 }
 
-/* ABOUT MODAL */
+/* ================= ABOUT MODAL ================= */
 .about-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
   display: none;
   justify-content: center;
   align-items: center;
@@ -205,9 +196,17 @@ main {
   background: #fff;
   width: 90%;
   max-width: 340px;
-  border-radius: 20px;
-  padding: 20px;
+  padding: 28px 22px;
+  border-radius: 24px;
   text-align: center;
+  position: relative;
+  animation: luxurySlide 0.45s ease;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+@keyframes luxurySlide {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .about-logo {
@@ -217,162 +216,46 @@ main {
 
 .close-btn {
   position: absolute;
-  right: 20px;
-  top: 15px;
+  right: 18px;
+  top: 14px;
   font-size: 22px;
   cursor: pointer;
-}
-/* ===== LUXURY ABOUT POPUP UPGRADE ===== */
-
-/* Glass blur background */
-.about-modal {
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
-}
-
-/* Premium popup animation */
-.about-box {
-  position: relative;
-  padding: 28px 22px;
-  border-radius: 24px;
-  animation: luxurySlide 0.45s cubic-bezier(.25,.8,.25,1);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
-}
-
-/* Slide + fade animation */
-@keyframes luxurySlide {
-  from {
-    transform: translateY(50px) scale(0.96);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-}
-
-/* Brand heading */
-.about-box h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  letter-spacing: 0.5px;
-  color: #5A1E2D;
-  margin-bottom: 10px;
-}
-
-/* Clean luxury text */
-.about-box p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #555;
-  margin-bottom: 18px;
-}
-
-/* Trust points – Myntra style */
-.trust-points li {
-  font-size: 13px;
-  color: #333;
-  margin: 6px 0;
-}
-
-/* CTA button – luxury */
-.about-box button {
-  background: linear-gradient(135deg, #5A1E2D, #8B3A4A);
-  border-radius: 30px;
-  font-size: 14px;
-  letter-spacing: 0.4px;
-  transition: transform 0.2s ease;
-}
-
-.about-box button:hover {
-  transform: scale(1.03);
-}
-
-/* Close icon subtle */
-.close-btn {
   color: #999;
-  transition: color 0.2s ease;
 }
 
-.close-btn:hover {
-  color: #000;
-}
-
-/* Floating info icon – premium pulse */
-.about-float {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-}
-
-.list-side {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: linear-gradient(135deg, #5A1E2D, #8B3A4A);
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 14px 0 0 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 500;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-  z-index: 999;
-  cursor: pointer;
-}
-
-/* Mobile safe */
-@media (max-width: 480px) {
-  .list-side {
-    padding: 9px 12px;
-    font-size: 12px;
-  }
-}
-
-.list-side i {
-  font-size: 16px;
-}
-
+/* ================= LIST POPUP ================= */
 .list-popup {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.55);
-  display: flex;
-  align-items: center;
+  backdrop-filter: blur(6px);
+  display: none;
   justify-content: center;
-  z-index: 9998;
+  align-items: center;
+  z-index: 9999;
 }
 
 .popup-box {
   background: #fff;
   width: 85%;
   max-width: 320px;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 22px;
   text-align: center;
   position: relative;
-}
-
-.popup-box span {
-  position: absolute;
-  right: 14px;
-  top: 10px;
-  font-size: 20px;
-  cursor: pointer;
 }
 
 .popup-btn {
   display: inline-block;
   margin-top: 16px;
   background: #25D366;
-  color: white;
+  color: #fff;
   padding: 12px 18px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 14px;
 }
-/* WOMEN TRUST SECTION */
+
+/* ================= WOMEN TRUST ================= */
 .safety-strip {
   background: #5A1E2D;
   color: white;
@@ -383,7 +266,6 @@ main {
 
 .women-love {
   padding: 32px 16px;
-  background: linear-gradient(180deg, #fff7f4, #fff);
 }
 
 .women-love h2 {
@@ -398,63 +280,12 @@ main {
   display: flex;
   gap: 14px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
 }
 
 .woman-card {
   min-width: 260px;
-  background: white;
+  background: #fff;
   padding: 18px;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  scroll-snap-align: center;
 }
-
-.woman-card p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #444;
-}
-
-.woman-card span {
-  display: block;
-  margin-top: 10px;
-  font-size: 12px;
-  color: #777;
-}
-
-.woman-card .stars {
-  color: #f4b400;
-  margin-top: 8px;
-  font-size: 14px;
-}
-.card-actions {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  margin: 14px 0;
-}
-
-.card-actions button {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: none;
-  font-size: 22px;
-  background: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  cursor: pointer;
-}
-
-.card-actions .skip {
-  color: #ff4d4d;
-}
-
-.card-actions .like {
-  color: #27ae60;
-}
-
-
-
-
-
