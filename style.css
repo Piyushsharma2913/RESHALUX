@@ -334,4 +334,43 @@ main {
   font-size: 16px;
 }
 
+.list-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+}
+
+.popup-box {
+  background: #fff;
+  width: 85%;
+  max-width: 320px;
+  border-radius: 16px;
+  padding: 22px;
+  text-align: center;
+  position: relative;
+}
+
+.popup-box span {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-btn {
+  display: inline-block;
+  margin-top: 16px;
+  background: #25D366;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
 
