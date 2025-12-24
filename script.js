@@ -159,4 +159,15 @@ function closeAbout() {
   document.getElementById("aboutModal").style.display = "none";
 }
 
-/* ---------- LIST POPUP ----------*
+/* ---------- LIST POPUP ---------- */
+setTimeout(() => {
+  const p = document.getElementById("listPopup");
+  if (p) p.style.display = "flex";
+}, 2000);
+
+function closeListPopup() {
+  document.getElementById("listPopup").style.display = "none";
+}
+
+/* INIT */
+loadCard();
