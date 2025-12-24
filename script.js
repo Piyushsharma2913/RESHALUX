@@ -4,7 +4,6 @@ const skipBtn = document.querySelector(".skip");
 
 let mode = "rent";
 let category = "all";
-let currentIndex = 0;
 
 const whatsappNumber = "918107249155";
 
@@ -20,17 +19,21 @@ const data = {
 };
 
 function getItems() {
-  return data[mode].filter(
-    item => category === "all" || item.cat === category
+  return data[mode].filter(item =>
+    category === "all" || item.cat === category
   );
 }
 
 function loadCard() {
   container.innerHTML = "";
   const items = getItems();
-  if (!items[currentIndex]) return;
 
-  const item = items[currentIndex];
+  if (items.length === 0) {
+    container.innerHTML = `<p style="text-align:center;color:#888;margin-top:40px;">No more dresses</p>`;
+    return;
+  }
+
+  const item = items[0];
   const card = document.createElement("div");
   card.className = "card";
 
@@ -46,8 +49,10 @@ function loadCard() {
   container.appendChild(card);
 }
 
+/* 🔥 SWIPE ENGINE */
 function enableSwipe(card, item) {
-  let startX = 0, moveX = 0;
+  let startX = 0;
+  let moveX = 0;
 
   card.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
@@ -56,67 +61,85 @@ function enableSwipe(card, item) {
 
   card.addEventListener("touchmove", e => {
     moveX = e.touches[0].clientX - startX;
-    card.style.transform = `translateX(${moveX}px) rotate(${moveX / 15}deg)`;
+    card.style.transform = `translateX(${moveX}px) rotate(${moveX / 20}deg)`;
   });
 
   card.addEventListener("touchend", () => {
     card.style.transition = "transform 0.3s ease";
-    if (moveX > 120) likeItem(item);
-    else if (moveX < -120) skipItem();
-    else card.style.transform = "translateX(0)";
+
+    if (moveX > 100) {
+      likeItem(item);
+    } else if (moveX < -100) {
+      skipItem(item);
+    } else {
+      card.style.transform = "translateX(0)";
+    }
   });
 }
 
+/* ✅ RIGHT SWIPE */
 function likeItem(item) {
   container.firstChild.style.transform = "translateX(120vw)";
-  window.open(
-    `https://wa.me/${whatsappNumber}?text=I%20want%20to%20${mode}%20${item.name}`,
-    "_blank"
-  );
-  next();
-}
-
-function skipItem() {
-  container.firstChild.style.transform = "translateX(-120vw)";
-  next();
-}
-
-function next() {
   setTimeout(() => {
-    currentIndex++;
+    removeItem(item);
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=I%20want%20to%20${mode}%20${item.name}`,
+      "_blank"
+    );
     loadCard();
   }, 300);
 }
 
+/* ✅ LEFT SWIPE */
+function skipItem(item) {
+  container.firstChild.style.transform = "translateX(-120vw)";
+  setTimeout(() => {
+    removeItem(item);
+    loadCard();
+  }, 300);
+}
+
+/* 🔥 ITEM REMOVE (MOST IMPORTANT) */
+function removeItem(item) {
+  const index = data[mode].indexOf(item);
+  if (index > -1) {
+    data[mode].splice(index, 1);
+  }
+}
+
+/* BUTTON SUPPORT */
 likeBtn.onclick = () => {
-  const item = getItems()[currentIndex];
+  const item = getItems()[0];
   if (item) likeItem(item);
 };
 
-skipBtn.onclick = skipItem;
+skipBtn.onclick = () => {
+  const item = getItems()[0];
+  if (item) skipItem(item);
+};
 
+/* MODE SWITCH */
 function switchMode(m) {
   mode = m;
-  currentIndex = 0;
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
   event.target.classList.add("active");
   loadCard();
 }
 
+/* CATEGORY */
 function setCategory(cat) {
   category = cat;
-  currentIndex = 0;
   document.querySelectorAll(".categories span").forEach(s => s.classList.remove("active"));
   event.target.classList.add("active");
   loadCard();
 }
 
-loadCard();
-// ABOUT POPUP FUNCTIONS
+/* ABOUT */
 function openAbout() {
   document.getElementById("aboutModal").style.display = "flex";
 }
-
 function closeAbout() {
   document.getElementById("aboutModal").style.display = "none";
 }
+
+loadCard();
