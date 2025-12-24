@@ -428,6 +428,32 @@ main {
   margin-top: 8px;
   font-size: 14px;
 }
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 14px 0;
+}
+
+.card-actions button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+.card-actions .skip {
+  color: #ff4d4d;
+}
+
+.card-actions .like {
+  color: #27ae60;
+}
+
 
 
 
