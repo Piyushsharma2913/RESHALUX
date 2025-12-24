@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Reshalux</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Reshalux</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -23,35 +23,22 @@
   </div>
 
   <div class="tabs">
-    <button class="tab active">Rent</button>
-    <button class="tab">Buy</button>
+    <button class="tab active" onclick="switchMode('rent', this)">Rent</button>
+    <button class="tab" onclick="switchMode('buy', this)">Buy</button>
   </div>
 </header>
 
 <div class="categories">
-  <span class="active">All</span>
-  <span>Saree</span>
-  <span>Lehenga</span>
-  <span>Kurti</span>
-  <span>Gown</span>
+  <span class="active" onclick="setCategory('all', this)">All</span>
+  <span onclick="setCategory('saree', this)">Saree</span>
+  <span onclick="setCategory('lehenga', this)">Lehenga</span>
+  <span onclick="setCategory('kurti', this)">Kurti</span>
+  <span onclick="setCategory('gown', this)">Gown</span>
 </div>
 
 <main>
-  <div id="card-container">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520962917960-7f4b8b6c0c38" />
-      <div class="card-info">
-        <h3>Royal Lehenga</h3>
-        <p>₹2,500 / Rent</p>
-      </div>
-    </div>
-  </div>
+  <div id="card-container"></div>
 </main>
-
-<div class="card-actions">
-  <button class="skip"><i class="fa-solid fa-xmark"></i></button>
-  <button class="like"><i class="fa-solid fa-heart"></i></button>
-</div>
 
 <div class="safety-strip">
   💖 Safe for women • Earn from home • Verified handling
@@ -73,27 +60,24 @@
   </div>
 </section>
 
-<!-- FLOATING ABOUT BUTTON -->
-<button class="about-float" id="aboutBtn">
+<!-- FLOATING ABOUT -->
+<button class="about-float" onclick="openAbout()">
   <i class="fa-solid fa-circle-info"></i>
 </button>
 
 <!-- ABOUT MODAL -->
 <div id="aboutModal" class="about-modal">
   <div class="about-box">
-    <span class="close-btn" id="closeAbout">×</span>
+    <span class="close-btn" onclick="closeAbout()">×</span>
     <img src="resha.png" class="about-logo">
     <h2>About Reshalux</h2>
-    <p>
-      Trusted fashion rental & resale platform.
-      Verified sellers. Premium handling.
-    </p>
+    <p>Trusted fashion rental & resale platform.</p>
     <ul class="trust-points">
       <li>✔ Verified Sellers</li>
       <li>✔ Quality Checked</li>
       <li>✔ WhatsApp Orders</li>
     </ul>
-    <button id="closeBtn2">Explore Dresses</button>
+    <button onclick="closeAbout()">Explore Dresses</button>
   </div>
 </div>
 
