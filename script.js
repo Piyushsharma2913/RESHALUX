@@ -166,4 +166,28 @@ function closeListPopup() {
   document.getElementById("listPopup").style.display = "none";
 }
 
+const modal = document.getElementById("aboutModal");
+const openBtn = document.getElementById("aboutBtn");
+const closeBtn = document.getElementById("closeAbout");
+const closeBtn2 = document.getElementById("closeBtn2");
+
+function openAbout(){
+  modal.style.display="flex";
+  document.body.classList.add("modal-open");
+}
+
+function closeAbout(){
+  modal.style.display="none";
+  document.body.classList.remove("modal-open");
+}
+
+openBtn.addEventListener("touchstart", openAbout);
+openBtn.addEventListener("click", openAbout);
+
+closeBtn.addEventListener("touchstart", closeAbout);
+closeBtn.addEventListener("click", closeAbout);
+
+closeBtn2.addEventListener("touchstart", closeAbout);
+closeBtn2.addEventListener("click", closeAbout);
+
 
