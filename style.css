@@ -7,14 +7,15 @@
 }
 
 body {
-  background: #F8F6F3;
-  color: #1C1C1C;
-  overflow-x: hidden;
+  background: #2A0F2F;   /* Royal Purple */
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* ================= HEADER ================= */
+
+/* HEADER */
 header {
-  padding: 14px 18px;
+  padding: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +33,7 @@ header {
   width: 34px;
 }
 
-/* ================= TABS ================= */
+/* Tabs */
 .tabs {
   display: flex;
   gap: 10px;
@@ -40,40 +41,36 @@ header {
 
 .tab {
   padding: 8px 18px;
+  border: none;
   border-radius: 20px;
-  border: 1px solid #ddd;
-  background: transparent;
+  background: #ddd;
   cursor: pointer;
-  color: #1C1C1C;
 }
 
 .tab.active {
   background: #C9A24D;
-  border-color: #C9A24D;
   color: #fff;
 }
 
-/* ================= CATEGORIES ================= */
+/* Categories */
 .categories {
   display: flex;
   gap: 14px;
-  padding: 10px 16px;
+  padding: 10px;
   overflow-x: auto;
 }
 
 .categories span {
   opacity: 0.6;
   cursor: pointer;
-  white-space: nowrap;
 }
 
 .categories .active {
   opacity: 1;
-  color: #C9A24D;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-/* ================= MAIN ================= */
+/* Main */
 main {
   min-height: 65vh;
   display: flex;
@@ -81,19 +78,18 @@ main {
   align-items: center;
 }
 
-/* ================= CARD ================= */
 .card {
   width: 90%;
   max-width: 360px;
   height: 480px;
-  background: #ffffff;
-  border-radius: 22px;
+  background: #FFF8EE;
+  border-radius: 18px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-/* ================= IMAGE ================= */
+/* Image slider container */
 .card-img-container {
   position: relative;
   width: 100%;
@@ -107,13 +103,13 @@ main {
   height: 100%;
   object-fit: cover;
   user-select: none;
-  border-radius: 22px 22px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 
-/* ================= DOTS ================= */
+/* Dots below image */
 .dots {
   position: absolute;
-  bottom: 10px;
+  bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -122,27 +118,28 @@ main {
 }
 
 .dots span {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: rgba(255,255,255,0.6);
   border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .dots span.active {
   background: #C9A24D;
 }
 
-/* ================= CARD INFO ================= */
+/* Card Info */
 .card-info {
   position: absolute;
-  bottom: 90px;
+  bottom: 80px;
   left: 16px;
-  right: 16px;
   color: #fff;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 8px #000;
 }
 
-/* ================= ACTION BUTTONS ================= */
+/* Buttons over image */
 .card-actions {
   position: absolute;
   bottom: 20px;
@@ -150,38 +147,47 @@ main {
   right: 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 32px;
+  padding: 0 30px;
+  pointer-events: none;
 }
 
 .card-actions button {
-  width: 60px;
-  height: 60px;
+  pointer-events: auto;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   border: none;
-  font-size: 24px;
+  font-size: 26px;
   color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: background 0.3s;
+}
+
+.card-actions button:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .card-actions .like {
-  background: #C9A24D;
+  background: rgba(255, 0, 80, 0.6);
 }
 
 .card-actions .skip {
-  background: #5A1E2D;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-/* ================= SAFETY STRIP ================= */
+/* Safety strip */
 .safety-strip {
   background: #5A1E2D;
   color: #fff;
   text-align: center;
   padding: 8px;
   font-size: 13px;
+  user-select: none;
 }
 
-/* ================= ABOUT FLOAT ================= */
+/* About floating button */
 .about-float {
   position: fixed;
   right: 16px;
@@ -191,32 +197,23 @@ main {
   border-radius: 50%;
   background: #5A1E2D;
   color: #fff;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* ================= MODALS ================= */
-.about-modal,
-.image-modal {
+/* About modal */
+.about-modal {
   position: fixed;
   inset: 0;
+  background: rgba(0, 0, 0, 0.6);
   display: none;
   justify-content: center;
   align-items: center;
-}
-
-.about-modal {
-  background: rgba(0,0,0,0.6);
   z-index: 1000;
-}
-
-.image-modal {
-  background: rgba(0,0,0,0.9);
-  z-index: 2000;
 }
 
 .about-box {
@@ -224,21 +221,105 @@ main {
   width: 90%;
   max-width: 340px;
   padding: 26px;
-  border-radius: 22px;
+  border-radius: 24px;
   text-align: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Fullscreen Image Modal */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
 }
 
 .image-modal img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 14px;
+  border-radius: 12px;
+  user-select: none;
+  cursor: zoom-out;
 }
 
-/* ================= CLOSE ================= */
-.close-btn {
-  position: absolute;
-  right: 18px;
-  top: 12px;
-  font-size: 22px;
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 25px;
+  width: 90%;
+  max-width: 350px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.whatsapp-btn {
+  display: block;
+  background: #25D366;
+  color: #fff;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.popup-box button {
+  border: none;
+  padding: 8px 14px;
+  background: #ccc;
+  border-radius: 6px;
   cursor: pointer;
 }
+
+/* FLOATING ICON */
+#uploadIcon {
+  position: fixed;
+  right: 15px;
+  bottom: 90px;
+  background: #25D366;
+  color: white;
+  font-size: 22px;
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+
+
+
+
+
+
+ISME COLOR EDIT KERKE BTA DO SAARE
