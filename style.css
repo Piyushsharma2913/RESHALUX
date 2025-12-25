@@ -7,11 +7,10 @@
 }
 
 body {
-  background: #FFF6EB;         /* CREAM WHITE */
+  background: #FFF6EB;   /* CREAM WHITE */
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
-
 
 /* HEADER */
 header {
@@ -26,7 +25,7 @@ header {
   align-items: center;
   gap: 8px;
   font-family: 'Playfair Display', serif;
-  color: #f1acc6;
+  color: #C9A24D;   /* GOLD */
 }
 
 .logo img {
@@ -43,12 +42,13 @@ header {
   padding: 8px 18px;
   border: none;
   border-radius: 20px;
-  background: #333;
+  background: #EDE6D8;   /* light cream */
   cursor: pointer;
+  color: #2A2A2A;
 }
 
 .tab.active {
-  background: #f1acc6;
+  background: #C9A24D;   /* GOLD */
   color: #fff;
 }
 
@@ -63,11 +63,13 @@ header {
 .categories span {
   opacity: 0.6;
   cursor: pointer;
+  color: #2A2A2A;
 }
 
 .categories .active {
   opacity: 1;
   font-weight: bold;
+  color: #C9A24D;
 }
 
 /* Main */
@@ -86,7 +88,7 @@ main {
   border-radius: 18px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 /* Image slider container */
@@ -127,7 +129,7 @@ main {
 }
 
 .dots span.active {
-  background: #f1acc6;
+  background: #C9A24D;   /* GOLD */
 }
 
 /* Card Info */
@@ -165,20 +167,20 @@ main {
 }
 
 .card-actions button:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .card-actions .like {
-  background: #f1acc6;
+  background: #C9A24D;   /* GOLD */
 }
 
 .card-actions .skip {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 /* Safety strip */
 .safety-strip {
-  background: #f1acc6;
+  background: #C9A24D;   /* GOLD */
   color: #fff;
   text-align: center;
   padding: 8px;
@@ -194,7 +196,7 @@ main {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #f1acc6  ;
+  background: #C9A24D;   /* GOLD */
   color: #fff;
   border: none;
   display: flex;
@@ -216,7 +218,7 @@ main {
 }
 
 .about-box {
-  background: #fff;
+  background: #FFF6EB;   /* CREAM */
   width: 90%;
   max-width: 340px;
   padding: 26px;
@@ -252,73 +254,43 @@ main {
   cursor: zoom-out;
 }
 
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
+/* Popup */
 .popup-box {
   background: #FFF6EB;
-  padding: 25px;
-  width: 90%;
-  max-width: 350px;
-  border-radius: 12px;
+  padding:25px;
+  width:90%;
+  max-width:350px;
+  border-radius:12px;
   text-align: center;
 }
 
 .whatsapp-btn {
-  display: block;
+  display: block; 
   background: #f1acc6;
-  color: #fff;
+  color: #fff; 
   padding: 12px;
   margin: 15px 0;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: bold; 
 }
-
-.popup-box button {
-  border: none;
-  padding: 8px 14px;
-  background: #ddd;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* FLOATING ICON */
-#uploadIcon {
-  position: fixed;
-  right: 15px;
-  bottom: 90px;
+/* FLOATING ICON */ 
+#uploadIcon { 
+  position: fixed; 
+  right: 15px; 
+  bottom: 90px; 
   background: #f1acc6;
-  color: white;
+  color: white; 
   font-size: 22px;
   padding: 14px;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: pointer; 
   display: none;
   z-index: 9999;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  animation: bounce 1.5s infinite;
-}
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+  animation: bounce 1.5s infinite; }
 
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-
-
-
-
-
-
-
+@keyframes 
+bounce { 0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); } }
+  
