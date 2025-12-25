@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Reshalux</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reshalux - Rent & Buy Dresses</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <header>
   <div class="logo">
-    <img src="resha.png" alt="Logo" />
+    <img src="resha.png" alt="Reshalux Logo" />
     <span>RESHALUX</span>
   </div>
-
   <div class="tabs">
     <button class="tab active" onclick="switchMode('rent', this)">Rent</button>
     <button class="tab" onclick="switchMode('buy', this)">Buy</button>
   </div>
+  <button class="contact-btn" onclick="openContact()">Rent Your Dress</button>
 </header>
 
 <div class="categories">
@@ -33,29 +32,33 @@
 </div>
 
 <main>
+  <div id="swipe-indicators">
+    <div class="swipe-text left"><i class="fa-solid fa-xmark"></i> Skip</div>
+    <div class="swipe-text right">Buy <i class="fa-solid fa-heart"></i></div>
+  </div>
   <div id="card-container"></div>
 </main>
 
-<div class="safety-strip">
-  💖 Safe for women • Earn from home • Verified handling
+<!-- Full Image Modal -->
+<div id="imageModal" class="modal" onclick="closeImageModal(event)">
+  <img id="modalImage" src="" alt="Full View" />
 </div>
 
-<button class="about-float" onclick="openAbout()">
-  <i class="fa-solid fa-circle-info"></i>
-</button>
-
-<div id="aboutModal" class="about-modal">
-  <div class="about-box">
-    <span class="close-btn" onclick="closeAbout()">×</span>
-    <img src="resha.png" width="55" alt="Logo" />
-    <h2>About Reshalux</h2>
-    <p>Trusted fashion rental & resale platform.</p>
-    <button onclick="closeAbout()">Explore Dresses</button>
+<!-- Contact Popup -->
+<div id="contactModal" class="modal" onclick="closeContactModal(event)">
+  <div class="contact-box" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeContactModal()">×</span>
+    <h2>Rent Your Dress with Reshalux</h2>
+    <form id="contactForm" onsubmit="submitContactForm(event)">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" required />
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="10 digit number" />
+      <label for="dress">Dress Name / Description</label>
+      <input type="text" id="dress" required />
+      <button type="submit">Send Request</button>
+    </form>
   </div>
-</div>
-
-<div id="imageModal" class="image-modal" onclick="closeImageModal()">
-  <img id="modalImage" src="" alt="Full view" />
 </div>
 
 <script src="script.js"></script>
