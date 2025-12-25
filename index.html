@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Reshalux</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,7 +14,7 @@
 
 <header>
   <div class="logo">
-    <img src="resha.png" alt="Reshalux">
+    <img src="resha.png" alt="Logo" />
     <span>RESHALUX</span>
   </div>
 
@@ -44,41 +40,22 @@
   💖 Safe for women • Earn from home • Verified handling
 </div>
 
-<section class="women-love">
-  <h2>Loved by Women Like You 💕</h2>
-  <div class="women-cards">
-    <div class="woman-card">
-      <p>“Earned money from my lehenga at home.”</p>
-      <span>— Sunita, Jaipur</span>
-      <div class="stars">★★★★★</div>
-    </div>
-    <div class="woman-card">
-      <p>“Felt safe listing my dress.”</p>
-      <span>— Aarti, Delhi</span>
-      <div class="stars">★★★★★</div>
-    </div>
-  </div>
-</section>
-
-<!-- FLOATING ABOUT -->
 <button class="about-float" onclick="openAbout()">
   <i class="fa-solid fa-circle-info"></i>
 </button>
 
-<!-- ABOUT MODAL -->
 <div id="aboutModal" class="about-modal">
   <div class="about-box">
     <span class="close-btn" onclick="closeAbout()">×</span>
-    <img src="resha.png" class="about-logo">
+    <img src="resha.png" width="60" alt="Logo" />
     <h2>About Reshalux</h2>
     <p>Trusted fashion rental & resale platform.</p>
-    <ul class="trust-points">
-      <li>✔ Verified Sellers</li>
-      <li>✔ Quality Checked</li>
-      <li>✔ WhatsApp Orders</li>
-    </ul>
     <button onclick="closeAbout()">Explore Dresses</button>
   </div>
+</div>
+
+<div id="imageModal" class="image-modal" onclick="closeImageModal()">
+  <img id="modalImage" src="" alt="Full view" />
 </div>
 
 <script src="script.js"></script>
