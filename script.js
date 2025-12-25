@@ -189,13 +189,16 @@ loadCard();
 
 function openUploadPopup() {
   document.getElementById("uploadPopup").style.display = "flex";
+  document.getElementById("uploadIcon").style.display = "none";
 }
 
 function closeUploadPopup() {
   document.getElementById("uploadPopup").style.display = "none";
+  document.getElementById("uploadIcon").style.display = "block";
 }
 
-// auto open popup after 3 seconds
-setTimeout(openUploadPopup, 3000);
-
+// Auto popup after page load
+setTimeout(() => {
+  openUploadPopup();
+}, 3000);
 
