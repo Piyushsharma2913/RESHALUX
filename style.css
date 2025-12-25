@@ -264,6 +264,16 @@ main {
   text-align: center;
 }
 
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;                 /* JS se show hoga */
+  align-items: center;           /* CENTER VERTICALLY */
+  justify-content: center;       /* CENTER HORIZONTALLY */
+  z-index: 9999;
+}
+
 .whatsapp-btn {
   display: block; 
   background: #f1acc6;
@@ -294,3 +304,4 @@ main {
 bounce { 0%,100% { transform: translateY(0); }
         50% { transform: translateY(-6px); } }
   
+
