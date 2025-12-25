@@ -12,8 +12,7 @@ const data = {
       cat: "lehenga",
       imgs: [
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766689372/white_bz8o8q.jpg",
-        "g,
-        ""
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766689372/green_lahenga_kqqsy8.jpg"
       ]
     },
     {
@@ -24,18 +23,35 @@ const data = {
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/d7623a870e2795fc54020220ab8cba7c_fcjnkk.jpg",
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/9b0e2c88a83e4d4338820b10c8f75ae2_dkivxb.jpg"
       ]
-    }
-    [
-   {
-      name: "GOLD net ",
+    },
+    {
+      name: "GOLD Net Lehenga",
       price: "₹499/day",
-      cat: "lahenga",
+      cat: "lehenga",
       imgs: [
-        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/d7623a870e2795fc54020220ab8cba7c_fcjnkk.jpg",
-        "
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/d7623a870e2795fc54020220ab8cba7c_fcjnkk.jpg"
+      ]
+    }
+  ],
+  buy: [
+    {
+      name: "Designer Kurti",
+      price: "₹1999",
+      cat: "kurti",
+      imgs: [
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766689372/kurti_for_sale_jlopte.jpg"
       ]
     },
-
+    {
+      name: "Party Gown",
+      price: "₹3499",
+      cat: "gown",
+      imgs: [
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690604/2f34f9cd9ecaeab9e0d2cd77bc10dcff_hbctfb.jpg"
+      ]
+    }
+  ]
+};
   buy: [
     {
       name: "Designer Kurti",
@@ -190,6 +206,7 @@ function openAbout(){ document.getElementById("aboutModal").style.display = "fle
 function closeAbout(){ document.getElementById("aboutModal").style.display = "none"; }
 
 loadCard();
+
 
 
 
