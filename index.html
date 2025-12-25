@@ -59,156 +59,25 @@
 </div>
 
 <script src="script.js"></script>
-</body>
-<!-- Popup Modal HTML -->
-<div id="firstVisitPopup" class="popup-modal">
-  <div class="popup-content">
-    <span id="closePopup" class="close-btn">&times;</span>
-    <h2>Did you know?</h2>
-    <p>You can rent out your dresses & earn money! <br> Click below to upload your dress via WhatsApp.</p>
-    <a href="https://wa.me/918107249155?text=Hello!%20I%20want%20to%20upload%20my%20dress%20for%20rent%20or%20sale." target="_blank" class="whatsapp-btn">Upload via WhatsApp</a>
+  <div id="uploadPopup" class="popup-overlay">
+  <div class="popup-box">
+    <h2>Upload Your Dress</h2>
+    <p>WhatsApp par dress photo bheje</p>
+
+    <a 
+      href="https://wa.me/918107249155?text=Hi%20I%20want%20to%20upload%20my%20dress"
+      target="_blank"
+      class="whatsapp-btn"
+    >
+      Upload via WhatsApp
+    </a>
+
+    <button onclick="closeUploadPopup()">Close</button>
   </div>
 </div>
 
-<!-- Side Icon Button -->
-<button id="popupIcon" title="Rent Your Dress" style="display:none;">
-  <i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:28px;"></i>
-</button>
+</body>
+\</html>
 
-<style>
-  /* Popup styling */
-  .popup-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-  }
-
-  .popup-content {
-    background: white;
-    padding: 25px 30px;
-    border-radius: 15px;
-    max-width: 360px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    position: relative;
-  }
-
-  .close-btn {
-    position: absolute;
-    right: 15px;
-    top: 12px;
-    font-size: 28px;
-    cursor: pointer;
-    color: #555;
-  }
-
-  .popup-content h2 {
-    color: #5A1E2D;
-    margin-bottom: 15px;
-  }
-
-  .popup-content p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-
-  .whatsapp-btn {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 16px;
-    box-shadow: 0 3px 8px rgba(37, 211, 102, 0.6);
-    transition: background 0.3s ease;
-  }
-
-  .whatsapp-btn:hover {
-    background: #1ebe57;
-  }
-
-  /* Side Icon Button styling */
-  #popupIcon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: white;
-    border: none;
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    cursor: pointer;
-    z-index: 2100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #popupIcon:hover {
-    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
-  }
-</style>
-
-<script>
-  const popup = document.getElementById('firstVisitPopup');
-  const closeBtn = document.getElementById('closePopup');
-  const popupIcon = document.getElementById('popupIcon');
-
-  let popupShown = localStorage.getItem('popupShown');
-  let popupDismissed = localStorage.getItem('popupDismissed');
-
-  function showPopup() {
-    if (!popupShown && !popupDismissed) {
-      popup.style.display = 'flex';
-      localStorage.setItem('popupShown', 'true');
-    }
-  }
-
-  // Show popup after 7 seconds delay OR on 50% scroll, only if not dismissed
-  setTimeout(() => {
-    if (!popupDismissed) showPopup();
-  }, 7000);
-
-  window.addEventListener('scroll', () => {
-    if (!popupShown && !popupDismissed) {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollTop / docHeight > 0.5) {
-        showPopup();
-      }
-    }
-  });
-
-  closeBtn.onclick = () => {
-    popup.style.display = 'none';
-    popupIcon.style.display = 'flex';
-    localStorage.setItem('popupDismissed', 'true');
-  };
-
-  popupIcon.onclick = () => {
-    popup.style.display = 'flex';
-    popupIcon.style.display = 'none';
-  };
-
-  window.onclick = (e) => {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-      popupIcon.style.display = 'flex';
-      localStorage.setItem('popupDismissed', 'true');
-    }
-  };
-</script>
-
-<!-- FontAwesome CDN for WhatsApp icon -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</html>
 
 
