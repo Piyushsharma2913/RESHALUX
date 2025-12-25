@@ -60,7 +60,7 @@
 
 <script src="script.js"></script>
 </body>
-  <!-- Popup Modal HTML -->
+<!-- Popup Modal HTML -->
 <div id="firstVisitPopup" class="popup-modal">
   <div class="popup-content">
     <span id="closePopup" class="close-btn">&times;</span>
@@ -70,7 +70,13 @@
   </div>
 </div>
 
+<!-- Side Icon Button -->
+<button id="popupIcon" title="Rent Your Dress" style="display:none;">
+  <i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:28px;"></i>
+</button>
+
 <style>
+  /* Popup styling */
   .popup-modal {
     position: fixed;
     inset: 0;
@@ -127,29 +133,82 @@
   .whatsapp-btn:hover {
     background: #1ebe57;
   }
+
+  /* Side Icon Button styling */
+  #popupIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 2100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #popupIcon:hover {
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+  }
 </style>
 
 <script>
-  // Show popup only once per user using localStorage
-  window.onload = () => {
-    if (!localStorage.getItem('popupShown')) {
-      document.getElementById('firstVisitPopup').style.display = 'flex';
+  const popup = document.getElementById('firstVisitPopup');
+  const closeBtn = document.getElementById('closePopup');
+  const popupIcon = document.getElementById('popupIcon');
+
+  let popupShown = localStorage.getItem('popupShown');
+  let popupDismissed = localStorage.getItem('popupDismissed');
+
+  function showPopup() {
+    if (!popupShown && !popupDismissed) {
+      popup.style.display = 'flex';
       localStorage.setItem('popupShown', 'true');
     }
+  }
+
+  // Show popup after 7 seconds delay OR on 50% scroll, only if not dismissed
+  setTimeout(() => {
+    if (!popupDismissed) showPopup();
+  }, 7000);
+
+  window.addEventListener('scroll', () => {
+    if (!popupShown && !popupDismissed) {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollTop / docHeight > 0.5) {
+        showPopup();
+      }
+    }
+  });
+
+  closeBtn.onclick = () => {
+    popup.style.display = 'none';
+    popupIcon.style.display = 'flex';
+    localStorage.setItem('popupDismissed', 'true');
   };
 
-  document.getElementById('closePopup').onclick = () => {
-    document.getElementById('firstVisitPopup').style.display = 'none';
+  popupIcon.onclick = () => {
+    popup.style.display = 'flex';
+    popupIcon.style.display = 'none';
   };
 
-  // Optional: close popup when clicking outside content
   window.onclick = (e) => {
-    const popup = document.getElementById('firstVisitPopup');
     if (e.target === popup) {
       popup.style.display = 'none';
+      popupIcon.style.display = 'flex';
+      localStorage.setItem('popupDismissed', 'true');
     }
   };
 </script>
 
+<!-- FontAwesome CDN for WhatsApp icon -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </html>
+
 
