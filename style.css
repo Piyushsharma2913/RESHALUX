@@ -3,14 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background: #FFF8EE;
-  color: #5A1E2D;
+  background: #F8F6F3;
+  color: #1C1C1C;
+  overflow-x: hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
   padding: 14px 18px;
   display: flex;
@@ -30,7 +32,7 @@ header {
   width: 34px;
 }
 
-/* Tabs */
+/* ================= TABS ================= */
 .tabs {
   display: flex;
   gap: 10px;
@@ -39,28 +41,30 @@ header {
 .tab {
   padding: 8px 18px;
   border-radius: 20px;
-  border: 1px solid #C9A24D;
+  border: 1px solid #ddd;
   background: transparent;
-  color: #5A1E2D;
   cursor: pointer;
+  color: #1C1C1C;
 }
 
 .tab.active {
   background: #C9A24D;
+  border-color: #C9A24D;
   color: #fff;
 }
 
-/* Categories */
+/* ================= CATEGORIES ================= */
 .categories {
   display: flex;
   gap: 14px;
-  padding: 12px;
+  padding: 10px 16px;
   overflow-x: auto;
 }
 
 .categories span {
   opacity: 0.6;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .categories .active {
@@ -69,7 +73,7 @@ header {
   font-weight: 600;
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
 main {
   min-height: 65vh;
   display: flex;
@@ -77,130 +81,164 @@ main {
   align-items: center;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .card {
   width: 90%;
   max-width: 360px;
   height: 480px;
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff;
+  border-radius: 22px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
-/* Image */
+/* ================= IMAGE ================= */
 .card-img-container {
+  position: relative;
   width: 100%;
   height: 70%;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .card-img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  user-select: none;
+  border-radius: 22px 22px 0 0;
 }
 
-/* Info */
+/* ================= DOTS ================= */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.dots span {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+}
+
+.dots span.active {
+  background: #C9A24D;
+}
+
+/* ================= CARD INFO ================= */
 .card-info {
   position: absolute;
   bottom: 90px;
   left: 16px;
+  right: 16px;
   color: #fff;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  text-shadow: 0 3px 10px rgba(0,0,0,0.7);
 }
 
-/* Buttons */
+/* ================= ACTION BUTTONS ================= */
 .card-actions {
   position: absolute;
-  bottom: 18px;
+  bottom: 20px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 32px;
 }
 
 .card-actions button {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: none;
-  font-size: 26px;
+  font-size: 24px;
+  color: #fff;
   cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 .card-actions .like {
   background: #C9A24D;
-  color: #fff;
 }
 
 .card-actions .skip {
   background: #5A1E2D;
-  color: #fff;
 }
 
-/* Safety strip */
+/* ================= SAFETY STRIP ================= */
 .safety-strip {
-  background: #C9A24D;
+  background: #5A1E2D;
   color: #fff;
   text-align: center;
   padding: 8px;
   font-size: 13px;
 }
 
-/* FLOATING UPLOAD ICON */
-#uploadIcon {
+/* ================= ABOUT FLOAT ================= */
+.about-float {
   position: fixed;
   right: 16px;
-  bottom: 100px;
-  background: #C9A24D;
-  color: #fff;
-  font-size: 22px;
-  padding: 14px;
+  bottom: 90px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  background: #5A1E2D;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
   cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* POPUP */
-.popup-overlay {
+/* ================= MODALS ================= */
+.about-modal,
+.image-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 10000;
 }
 
-.popup-box {
-  background: #FFF8EE;
-  padding: 26px;
+.about-modal {
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.image-modal {
+  background: rgba(0,0,0,0.9);
+  z-index: 2000;
+}
+
+.about-box {
+  background: #fff;
   width: 90%;
-  max-width: 350px;
-  border-radius: 16px;
+  max-width: 340px;
+  padding: 26px;
+  border-radius: 22px;
   text-align: center;
-  color: #5A1E2D;
 }
 
-.whatsapp-btn {
-  display: block;
-  background: #25D366;
-  color: #fff;
-  padding: 12px;
-  margin: 16px 0;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 14px;
 }
 
-.popup-box button {
-  border: none;
-  padding: 8px 16px;
-  background: #C9A24D;
-  color: #fff;
-  border-radius: 6px;
+/* ================= CLOSE ================= */
+.close-btn {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 22px;
   cursor: pointer;
 }
