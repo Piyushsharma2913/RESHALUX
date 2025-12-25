@@ -255,15 +255,6 @@ main {
 }
 
 /* Popup */
-.popup-box {
-  background: #FFF6EB;
-  padding:25px;
-  width:90%;
-  max-width:350px;
-  border-radius:12px;
-  text-align: center;
-}
-
 .popup-overlay {
   position: fixed;
   inset: 0;
@@ -273,7 +264,14 @@ main {
   justify-content: center;       /* CENTER HORIZONTALLY */
   z-index: 9999;
 }
-
+.popup-box {
+  background: #FFF6EB;
+  padding:25px;
+  width:90%;
+  max-width:350px;
+  border-radius:12px;
+  text-align: center;
+}
 .whatsapp-btn {
   display: block; 
   background: #f1acc6;
@@ -304,4 +302,5 @@ main {
 bounce { 0%,100% { transform: translateY(0); }
         50% { transform: translateY(-6px); } }
   
+
 
