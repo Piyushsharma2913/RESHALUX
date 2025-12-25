@@ -7,11 +7,10 @@
 }
 
 body {
-  background: #2A0F2F;   /* Royal Purple */
+  background: #FFF6EB; /* CREAM WHITE */
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
-
 
 /* HEADER */
 header {
@@ -19,6 +18,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #FFF6EB;
 }
 
 .logo {
@@ -26,7 +26,7 @@ header {
   align-items: center;
   gap: 8px;
   font-family: 'Playfair Display', serif;
-  color: #5A1E2D;
+  color: #f1acc6;
 }
 
 .logo img {
@@ -43,12 +43,13 @@ header {
   padding: 8px 18px;
   border: none;
   border-radius: 20px;
-  background: #ddd;
+  background: #f7d4e0;
+  color: #333;
   cursor: pointer;
 }
 
 .tab.active {
-  background: #C9A24D;
+  background: #f1acc6;
   color: #fff;
 }
 
@@ -63,11 +64,13 @@ header {
 .categories span {
   opacity: 0.6;
   cursor: pointer;
+  color: #444;
 }
 
 .categories .active {
   opacity: 1;
   font-weight: bold;
+  color: #f1acc6;
 }
 
 /* Main */
@@ -78,15 +81,16 @@ main {
   align-items: center;
 }
 
+/* CARD */
 .card {
   width: 90%;
   max-width: 360px;
   height: 480px;
-  background: #FFF8EE;
+  background: #FFFFFF;
   border-radius: 18px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 /* Image slider container */
@@ -103,10 +107,10 @@ main {
   height: 100%;
   object-fit: cover;
   user-select: none;
-  border-radius: 20px 20px 0 0;
+  border-radius: 18px 18px 0 0;
 }
 
-/* Dots below image */
+/* Dots */
 .dots {
   position: absolute;
   bottom: 8px;
@@ -120,14 +124,13 @@ main {
 .dots span {
   width: 10px;
   height: 10px;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .dots span.active {
-  background: #C9A24D;
+  background: #f1acc6;
 }
 
 /* Card Info */
@@ -136,10 +139,10 @@ main {
   bottom: 80px;
   left: 16px;
   color: #fff;
-  text-shadow: 0 2px 8px #000;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
-/* Buttons over image */
+/* Buttons */
 .card-actions {
   position: absolute;
   bottom: 20px;
@@ -159,32 +162,26 @@ main {
   border: none;
   font-size: 26px;
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
   cursor: pointer;
-  transition: background 0.3s;
-}
-
-.card-actions button:hover {
-  background: rgba(0, 0, 0, 0.7);
 }
 
 .card-actions .like {
-  background: rgba(255, 0, 80, 0.6);
+  background: #f1acc6;
 }
 
 .card-actions .skip {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.5);
 }
 
 /* Safety strip */
 .safety-strip {
-  background: #5A1E2D;
+  background: #f1acc6;
   color: #fff;
   text-align: center;
   padding: 8px;
   font-size: 13px;
-  user-select: none;
 }
 
 /* About floating button */
@@ -195,7 +192,7 @@ main {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #5A1E2D;
+  background: #f1acc6;
   color: #fff;
   border: none;
   display: flex;
@@ -217,7 +214,7 @@ main {
 }
 
 .about-box {
-  background: #fff;
+  background: #FFF6EB;
   width: 90%;
   max-width: 340px;
   padding: 26px;
@@ -232,6 +229,7 @@ main {
   top: 14px;
   font-size: 22px;
   cursor: pointer;
+  color: #f1acc6;
 }
 
 /* Fullscreen Image Modal */
@@ -249,10 +247,10 @@ main {
   max-width: 90%;
   max-height: 90%;
   border-radius: 12px;
-  user-select: none;
   cursor: zoom-out;
 }
 
+/* Popup */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -267,7 +265,7 @@ main {
 }
 
 .popup-box {
-  background: #fff;
+  background: #FFF6EB;
   padding: 25px;
   width: 90%;
   max-width: 350px;
@@ -277,7 +275,7 @@ main {
 
 .whatsapp-btn {
   display: block;
-  background: #25D366;
+  background: #f1acc6;
   color: #fff;
   padding: 12px;
   margin: 15px 0;
@@ -287,39 +285,3 @@ main {
 }
 
 .popup-box button {
-  border: none;
-  padding: 8px 14px;
-  background: #ccc;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* FLOATING ICON */
-#uploadIcon {
-  position: fixed;
-  right: 15px;
-  bottom: 90px;
-  background: #25D366;
-  color: white;
-  font-size: 22px;
-  padding: 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  z-index: 9999;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-
-
-
-
-
-
-ISME COLOR EDIT KERKE BTA DO SAARE
