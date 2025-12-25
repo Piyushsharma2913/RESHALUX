@@ -11,9 +11,9 @@ const data = {
       price: "₹799/day",
       cat: "lehenga",
       imgs: [
-        "https://images.unsplash.com/photo-1618354691373-d851c5c3a990",
-        "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6",
-        "https://images.unsplash.com/photo-1583391733956-6c78276477e2"
+        "white.jpg,
+        "green lahenga.jpg,
+        ""
       ]
     },
     {
@@ -32,8 +32,8 @@ const data = {
       price: "₹1999",
       cat: "kurti",
       imgs: [
-        "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6",
-        "https://images.unsplash.com/photo-1612423284934-2850a4cb8f23"
+        "kurti for sale.jpg,
+        ""
       ]
     },
     {
@@ -180,3 +180,4 @@ function openAbout(){ document.getElementById("aboutModal").style.display = "fle
 function closeAbout(){ document.getElementById("aboutModal").style.display = "none"; }
 
 loadCard();
+
