@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #2A0F2F;   /* Royal Purple */
+  background: #FFF6EB;
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
@@ -26,7 +26,7 @@ header {
   align-items: center;
   gap: 8px;
   font-family: 'Playfair Display', serif;
-  color: #5A1E2D;
+  color: #f1acc6;
 }
 
 .logo img {
@@ -43,12 +43,12 @@ header {
   padding: 8px 18px;
   border: none;
   border-radius: 20px;
-  background: #ddd;
+  background: #333;
   cursor: pointer;
 }
 
 .tab.active {
-  background: #C9A24D;
+  background: #f1acc6;
   color: #fff;
 }
 
@@ -82,7 +82,7 @@ main {
   width: 90%;
   max-width: 360px;
   height: 480px;
-  background: #FFF8EE;
+  background: #FFFFFF;
   border-radius: 18px;
   overflow: hidden;
   position: relative;
@@ -120,14 +120,14 @@ main {
 .dots span {
   width: 10px;
   height: 10px;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .dots span.active {
-  background: #C9A24D;
+  background: #f1acc6;
 }
 
 /* Card Info */
@@ -136,7 +136,7 @@ main {
   bottom: 80px;
   left: 16px;
   color: #fff;
-  text-shadow: 0 2px 8px #000;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 /* Buttons over image */
@@ -159,10 +159,9 @@ main {
   border: none;
   font-size: 26px;
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .card-actions button:hover {
@@ -170,16 +169,16 @@ main {
 }
 
 .card-actions .like {
-  background: rgba(255, 0, 80, 0.6);
+  background: #f1acc6;
 }
 
 .card-actions .skip {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* Safety strip */
 .safety-strip {
-  background: #5A1E2D;
+  background: #f1acc6;
   color: #fff;
   text-align: center;
   padding: 8px;
@@ -195,7 +194,7 @@ main {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #5A1E2D;
+  background: #f1acc6  ;
   color: #fff;
   border: none;
   display: flex;
@@ -267,7 +266,7 @@ main {
 }
 
 .popup-box {
-  background: #fff;
+  background: #FFF6EB;
   padding: 25px;
   width: 90%;
   max-width: 350px;
@@ -277,7 +276,7 @@ main {
 
 .whatsapp-btn {
   display: block;
-  background: #25D366;
+  background: #f1acc6;
   color: #fff;
   padding: 12px;
   margin: 15px 0;
@@ -289,7 +288,7 @@ main {
 .popup-box button {
   border: none;
   padding: 8px 14px;
-  background: #ccc;
+  background: #ddd;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -299,7 +298,7 @@ main {
   position: fixed;
   right: 15px;
   bottom: 90px;
-  background: #25D366;
+  background: #f1acc6;
   color: white;
   font-size: 22px;
   padding: 14px;
@@ -315,6 +314,7 @@ main {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+
 
 
 
