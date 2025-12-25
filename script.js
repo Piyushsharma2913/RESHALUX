@@ -11,8 +11,8 @@ const data = {
       price: "₹799/day",
       cat: "lehenga",
       imgs: [
-        "white.jpg,
-        "green lahenga.jpg,
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766689372/white_bz8o8q.jpg",
+        "g,
         ""
       ]
     },
@@ -21,11 +21,21 @@ const data = {
       price: "₹499/day",
       cat: "saree",
       imgs: [
-        "https://images.unsplash.com/photo-1583391733956-6c78276477e2",
-        "https://images.unsplash.com/photo-1612423284934-2850a4cb8f23"
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/d7623a870e2795fc54020220ab8cba7c_fcjnkk.jpg",
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/9b0e2c88a83e4d4338820b10c8f75ae2_dkivxb.jpg"
       ]
     }
-  ],
+    [
+   {
+      name: "GOLD net ",
+      price: "₹499/day",
+      cat: "lahenga",
+      imgs: [
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/d7623a870e2795fc54020220ab8cba7c_fcjnkk.jpg",
+        "
+      ]
+    },
+
   buy: [
     {
       name: "Designer Kurti",
@@ -41,7 +51,7 @@ const data = {
       price: "₹3499",
       cat: "gown",
       imgs: [
-        "https://images.unsplash.com/photo-1612423284934-2850a4cb8f23"
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690604/2f34f9cd9ecaeab9e0d2cd77bc10dcff_hbctfb.jpg"
       ]
     }
   ]
@@ -180,5 +190,6 @@ function openAbout(){ document.getElementById("aboutModal").style.display = "fle
 function closeAbout(){ document.getElementById("aboutModal").style.display = "none"; }
 
 loadCard();
+
 
 
