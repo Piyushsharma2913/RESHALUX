@@ -186,3 +186,16 @@ function openAbout(){ document.getElementById("aboutModal").style.display = "fle
 function closeAbout(){ document.getElementById("aboutModal").style.display = "none"; }
 
 loadCard();
+
+function openUploadPopup() {
+  document.getElementById("uploadPopup").style.display = "flex";
+}
+
+function closeUploadPopup() {
+  document.getElementById("uploadPopup").style.display = "none";
+}
+
+// auto open popup after 3 seconds
+setTimeout(openUploadPopup, 3000);
+
+
