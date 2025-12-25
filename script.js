@@ -52,26 +52,6 @@ const data = {
     }
   ]
 };
-  buy: [
-    {
-      name: "Designer Kurti",
-      price: "₹1999",
-      cat: "kurti",
-      imgs: [
-        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766689372/kurti_for_sale_jlopte.jpg,
-        ""
-      ]
-    },
-    {
-      name: "Party Gown",
-      price: "₹3499",
-      cat: "gown",
-      imgs: [
-        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690604/2f34f9cd9ecaeab9e0d2cd77bc10dcff_hbctfb.jpg"
-      ]
-    }
-  ]
-};
 
 let currentItem = null;
 let currentImgIndex = 0;
@@ -206,7 +186,3 @@ function openAbout(){ document.getElementById("aboutModal").style.display = "fle
 function closeAbout(){ document.getElementById("aboutModal").style.display = "none"; }
 
 loadCard();
-
-
-
-
