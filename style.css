@@ -7,10 +7,11 @@
 }
 
 body {
-  background: #F8F6F3;
-  color: #1C1C1C;
-  overflow-x: hidden;
+  background: #2A0F2F;   /* Royal Purple */
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
+
 
 /* HEADER */
 header {
@@ -81,11 +82,11 @@ main {
   width: 90%;
   max-width: 360px;
   height: 480px;
-  background: #fff;
-  border-radius: 20px;
+  background: #FFF8EE;
+  border-radius: 18px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 /* Image slider container */
@@ -314,6 +315,7 @@ main {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+
 
 
 
