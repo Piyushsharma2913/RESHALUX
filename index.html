@@ -60,4 +60,96 @@
 
 <script src="script.js"></script>
 </body>
+  <!-- Popup Modal HTML -->
+<div id="firstVisitPopup" class="popup-modal">
+  <div class="popup-content">
+    <span id="closePopup" class="close-btn">&times;</span>
+    <h2>Did you know?</h2>
+    <p>You can rent out your dresses & earn money! <br> Click below to upload your dress via WhatsApp.</p>
+    <a href="https://wa.me/918107249155?text=Hello!%20I%20want%20to%20upload%20my%20dress%20for%20rent%20or%20sale." target="_blank" class="whatsapp-btn">Upload via WhatsApp</a>
+  </div>
+</div>
+
+<style>
+  .popup-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+
+  .popup-content {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    position: relative;
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #555;
+  }
+
+  .popup-content h2 {
+    color: #5A1E2D;
+    margin-bottom: 15px;
+  }
+
+  .popup-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .whatsapp-btn {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 3px 8px rgba(37, 211, 102, 0.6);
+    transition: background 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1ebe57;
+  }
+</style>
+
+<script>
+  // Show popup only once per user using localStorage
+  window.onload = () => {
+    if (!localStorage.getItem('popupShown')) {
+      document.getElementById('firstVisitPopup').style.display = 'flex';
+      localStorage.setItem('popupShown', 'true');
+    }
+  };
+
+  document.getElementById('closePopup').onclick = () => {
+    document.getElementById('firstVisitPopup').style.display = 'none';
+  };
+
+  // Optional: close popup when clicking outside content
+  window.onclick = (e) => {
+    const popup = document.getElementById('firstVisitPopup');
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  };
+</script>
+
 </html>
+
