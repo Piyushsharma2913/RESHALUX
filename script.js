@@ -32,7 +32,7 @@ const data = {
       price: "₹1999",
       cat: "kurti",
       imgs: [
-        "kurti for sale.jpg,
+        "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766689372/kurti_for_sale_jlopte.jpg,
         ""
       ]
     },
@@ -180,4 +180,5 @@ function openAbout(){ document.getElementById("aboutModal").style.display = "fle
 function closeAbout(){ document.getElementById("aboutModal").style.display = "none"; }
 
 loadCard();
+
 
