@@ -6,30 +6,28 @@
 }
 
 body {
-  background: #111;
-  color: #fff;
+  background: #FFF8EE;
+  color: #5A1E2D;
 }
 
 /* HEADER */
 header {
+  padding: 14px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 18px;
-  background: #111;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  color: #c89b3c;
+  color: #5A1E2D;
 }
 
 .logo img {
-  width: 36px;
+  width: 34px;
 }
 
 /* Tabs */
@@ -41,42 +39,42 @@ header {
 .tab {
   padding: 8px 18px;
   border-radius: 20px;
-  border: 1px solid #c89b3c;
+  border: 1px solid #C9A24D;
   background: transparent;
-  color: #c89b3c;
+  color: #5A1E2D;
   cursor: pointer;
 }
 
 .tab.active {
-  background: #c89b3c;
-  color: #111;
+  background: #C9A24D;
+  color: #fff;
 }
 
 /* Categories */
 .categories {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   padding: 12px;
   overflow-x: auto;
 }
 
 .categories span {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: pointer;
 }
 
 .categories .active {
   opacity: 1;
-  color: #c89b3c;
+  color: #C9A24D;
   font-weight: 600;
 }
 
 /* MAIN */
 main {
+  min-height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 65vh;
 }
 
 /* CARD */
@@ -84,11 +82,11 @@ main {
   width: 90%;
   max-width: 360px;
   height: 480px;
-  background: #1b1b1b;
+  background: #fff;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 /* Image */
@@ -108,15 +106,8 @@ main {
   position: absolute;
   bottom: 90px;
   left: 16px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-}
-
-.card-info h3 {
   color: #fff;
-}
-
-.card-info p {
-  color: #c89b3c;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 /* Buttons */
@@ -140,54 +131,37 @@ main {
 }
 
 .card-actions .like {
-  background: #c89b3c;
-  color: #111;
+  background: #C9A24D;
+  color: #fff;
 }
 
 .card-actions .skip {
-  background: #333;
+  background: #5A1E2D;
   color: #fff;
 }
 
 /* Safety strip */
 .safety-strip {
-  background: #c89b3c;
-  color: #111;
+  background: #C9A24D;
+  color: #fff;
   text-align: center;
   padding: 8px;
   font-size: 13px;
 }
 
-/* About floating */
-.about-float {
+/* FLOATING UPLOAD ICON */
+#uploadIcon {
   position: fixed;
   right: 16px;
-  bottom: 80px;
-  width: 48px;
-  height: 48px;
+  bottom: 100px;
+  background: #C9A24D;
+  color: #fff;
+  font-size: 22px;
+  padding: 14px;
   border-radius: 50%;
-  background: #c89b3c;
-  color: #111;
-  border: none;
-  font-size: 18px;
   cursor: pointer;
-}
-
-/* About modal */
-.about-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-box {
-  background: #1b1b1b;
-  padding: 24px;
-  border-radius: 16px;
-  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 /* POPUP */
@@ -198,47 +172,35 @@ main {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 10000;
 }
 
 .popup-box {
-  background: white;
-  padding: 22px;
+  background: #FFF8EE;
+  padding: 26px;
   width: 90%;
-  max-width: 360px;
-  border-radius: 14px;
+  max-width: 350px;
+  border-radius: 16px;
   text-align: center;
+  color: #5A1E2D;
 }
 
 .whatsapp-btn {
   display: block;
   background: #25D366;
-  color: white;
+  color: #fff;
   padding: 12px;
-  margin: 15px 0;
+  margin: 16px 0;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* FLOATING ICON */
-#uploadIcon {
-  position: fixed;
-  right: 15px;
-  bottom: 90px;
-  background: #25D366;
-  color: white;
-  font-size: 22px;
-  padding: 14px;
-  border-radius: 50%;
+.popup-box button {
+  border: none;
+  padding: 8px 16px;
+  background: #C9A24D;
+  color: #fff;
+  border-radius: 6px;
   cursor: pointer;
-  display: none;
-  z-index: 9999;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
 }
