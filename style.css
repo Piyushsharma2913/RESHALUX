@@ -81,7 +81,7 @@ main {
 }
 
 .card {
-  width: 90%;
+  width: 100%;
   max-width: 360px;
   height: 480px;
   background: #FFFFFF;
@@ -302,6 +302,7 @@ main {
 bounce { 0%,100% { transform: translateY(0); }
         50% { transform: translateY(-6px); } }
   
+
 
 
 
