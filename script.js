@@ -10,6 +10,7 @@ const data = {
       name: "Royal Lehenga",
       price: "₹799/day",
       cat: "lehenga",
+      location: "Jaipur ",
       imgs: [
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766689372/white_bz8o8q.jpg",
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766689372/green_lahenga_kqqsy8.jpg"
@@ -19,6 +20,7 @@ const data = {
       name: "Silk Saree",
       price: "₹499/day",
       cat: "saree",
+      location: "Jaipur ",
       imgs: [
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/d7623a870e2795fc54020220ab8cba7c_fcjnkk.jpg",
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/9b0e2c88a83e4d4338820b10c8f75ae2_dkivxb.jpg"
@@ -28,6 +30,7 @@ const data = {
       name: "GOLD Net Lehenga",
       price: "₹499/day",
       cat: "lehenga",
+      location: "Jaipur ",
       imgs: [
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690411/d7623a870e2795fc54020220ab8cba7c_fcjnkk.jpg"
       ]
@@ -38,6 +41,7 @@ const data = {
       name: "Designer Kurti",
       price: "₹1999",
       cat: "kurti",
+      location: "Jaipur ",
       imgs: [
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766689372/kurti_for_sale_jlopte.jpg"
       ]
@@ -46,6 +50,7 @@ const data = {
       name: "Party Gown",
       price: "₹3499",
       cat: "gown",
+      location: "Jaipur ",
       imgs: [
         "https://res.cloudinary.com/di5hjrvgg/image/upload/v1766690604/2f34f9cd9ecaeab9e0d2cd77bc10dcff_hbctfb.jpg"
       ]
@@ -201,4 +206,5 @@ function closeUploadPopup() {
 setTimeout(() => {
   openUploadPopup();
 }, 3000);
+
 
