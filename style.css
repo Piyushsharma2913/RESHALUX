@@ -192,7 +192,7 @@ main {
 .about-float {
   position: fixed;
   right: 16px;
-  bottom: 80px;
+  bottom: 90px;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -302,6 +302,7 @@ main {
 bounce { 0%,100% { transform: translateY(0); }
         50% { transform: translateY(-6px); } }
   
+
 
 
 
